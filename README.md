@@ -38,8 +38,8 @@ If you had to configure the launchctl load, start the server.
 
     mysql.server start
 
-Log into mysql as the root user. Unless you set a password on
-installation, the mysql root password is empty.
+>Log into mysql as the root user. Unless you set a password on
+>installation, the mysql root password is empty.
 
     mysql -uroot
 
