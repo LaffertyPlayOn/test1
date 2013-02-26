@@ -38,10 +38,27 @@ If you had to configure the launchctl load, start the server.
 
     mysql.server start
 
->Log into mysql as the root user. Unless you set a password on
->installation, the mysql root password is empty.
+Log into mysql as the root user. Unless you set a password on
+installation, the mysql root password is empty.
 
     mysql -uroot
+
+### Verify installation is configured the same way as Staging and Production instances in Amazon RDS
+	*Note: This may change later
+####Version (this isn't vital at the moment, we will revisit whether everyone should be on same version...see the info at the bottom of this page to see what the versions are as of March 2013)
+To see what version you have installed (if you don't already know), simply run the following command from the shell (not from within the mysql client)
+	$ mysql -V
+	or
+	$ mysql --version
+
+####Timezone settings
+Our RDS instances are configured to use 'UTC' as it's timezone, and it is not open to modification (RDS prevents this from being changed).  Therefore, it
+is probably prudent for us to ensure our local installations do the same.  It is not yet 100% clear that Rails mitigates this issue for us (although it looks like it may do the magic for us)
+but for the time being it's best we mirror the RDS instances as closely as possible.
+
+1.	Log in to the MySQL client if you're not there already (you should see "mysql>" as your prompt)
+2.	Run the following query:
+	mysql> *select @@global.time_zone, @@session.time_zone ; *
 
 ### Create the databases
 
