@@ -74,6 +74,7 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 >	- If 'UTC' was found, then all we need to do is update our config file: "my.cnf"
 >	- Locate your installation's my.cnf file (you can run __sudo find / -name "my.cnf"__ from another shell if you don't know where it's located) and open it in your favorite text editor.
 >	- Add the following line to the file, save it, then restart your MySQL server.
+	
 	default-time-zone = UTC
 >	- Re-run the "select @@global.time_zone..." stmt from above once you've logged back into MySQL client, verify it's as expected. 
 
