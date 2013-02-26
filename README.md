@@ -45,7 +45,7 @@ installation, the mysql root password is empty.
 
 ### Verify installation is configured the same way as Staging and Production instances in Amazon RDS
 	*Note: This may change later
-######Version (this isn't vital at the moment, we will revisit whether everyone should be on same version...see the info at the bottom of this page to see what the versions are as of March 2013)
+###### Version (this isn't vital at the moment, we will revisit whether everyone should be on same version...see the info at the bottom of this page to see what the versions are as of March 2013)
 To see what version you have installed (if you don't already know), simply run the following command from the shell (not from within the mysql client)
 	$ mysql -V
 	or
