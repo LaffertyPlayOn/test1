@@ -58,9 +58,18 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 >	- Log in to the MySQL client if you're not there already (you should see "mysql>" as your prompt)
 >	- Run the following query:
 	
-	**mysql>** select @@global.time_zone, @@session.time_zone ;
+	mysql> select @@global.time_zone, @@session.time_zone;
+	+--------------------+---------------------+
+	| @@global.time_zone | @@session.time_zone |
+	+--------------------+---------------------+
+	| UTC                | UTC                 |
+	+--------------------+---------------------+
+	1 row in set (0.00 sec)
 
-##### Version (this isn't vital at the moment, we will revisit whether everyone should be on same version...see the info at the bottom of this page to see what the versions are as of March 2013)
+>	- If you don't see UTC (ie, it's blank or instead you see SYSTEM or some other timezone), run the following:
+
+
+###### *Version* (this isn't vital at the moment, we will revisit whether everyone should be on same version...see the info at the bottom of this page to see what the versions are as of March 2013)
 To see what version you have installed (if you don't already know), simply run the following command from the shell (not from within the mysql client)
 
 	$ mysql -V
