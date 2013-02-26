@@ -58,6 +58,7 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 
 1.	Log in to the MySQL client if you're not there already (you should see "mysql>" as your prompt)
 2.	Run the following query:
+	
 	mysql> *select @@global.time_zone, @@session.time_zone ; *
 
 ### Create the databases
