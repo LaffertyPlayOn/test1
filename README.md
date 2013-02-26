@@ -55,8 +55,8 @@ Our RDS instances are configured to use 'UTC' as it's timezone, and it is not op
 is probably prudent for us to ensure our local installations do the same.  It is not yet 100% clear that Rails mitigates this issue for us (although it looks like it may do the magic for us)
 but for the time being it's best we mirror the RDS instances as closely as possible.
 
->	Log in to the MySQL client if you're not there already (you should see "mysql>" as your prompt)
->	Run the following query:
+>	- Log in to the MySQL client if you're not there already (you should see "mysql>" as your prompt)
+>	- Run the following query:
 	
 	**mysql>** select @@global.time_zone, @@session.time_zone ;
 
