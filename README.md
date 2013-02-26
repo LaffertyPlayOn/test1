@@ -48,22 +48,26 @@ installation, the mysql root password is empty.
 	The things that need verification or updating are:
 	- TimeZone setting
 	- SQL_Mode setting
-	- MySQL version
-##### Version (this isn't vital at the moment, we will revisit whether everyone should be on same version...see the info at the bottom of this page to see what the versions are as of March 2013)
-To see what version you have installed (if you don't already know), simply run the following command from the shell (not from within the mysql client)
-	$ mysql -V
-	or
-	$ mysql --version
+	- MySQL version (optional)
 
 ###### *Timezone settings*
 Our RDS instances are configured to use 'UTC' as it's timezone, and it is not open to modification (RDS prevents this from being changed).  Therefore, it
 is probably prudent for us to ensure our local installations do the same.  It is not yet 100% clear that Rails mitigates this issue for us (although it looks like it may do the magic for us)
 but for the time being it's best we mirror the RDS instances as closely as possible.
 
-1.	Log in to the MySQL client if you're not there already (you should see "mysql>" as your prompt)
-2.	Run the following query:
+>	Log in to the MySQL client if you're not there already (you should see "mysql>" as your prompt)
+>	Run the following query:
 	
-	mysql> *select @@global.time_zone, @@session.time_zone ; *
+	**mysql>** select @@global.time_zone, @@session.time_zone ;
+
+##### Version (this isn't vital at the moment, we will revisit whether everyone should be on same version...see the info at the bottom of this page to see what the versions are as of March 2013)
+To see what version you have installed (if you don't already know), simply run the following command from the shell (not from within the mysql client)
+
+	$ mysql -V
+	or
+	$ mysql --version
+
+
 
 ### Create the databases
 
