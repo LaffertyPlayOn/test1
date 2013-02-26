@@ -60,6 +60,7 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 	
 	mysql> select @@global.time_zone, @@session.time_zone;
 >	and you should see something like:
+
 	+--------------------+---------------------+
 	| @@global.time_zone | @@session.time_zone |
 	+--------------------+---------------------+
