@@ -55,10 +55,11 @@ Our RDS instances are configured to use 'UTC' as it's timezone, and it is not op
 is probably prudent for us to ensure our local installations do the same.  It is not yet 100% clear that Rails mitigates this issue for us (although it looks like it may do the magic for us)
 but for the time being it's best we mirror the RDS instances as closely as possible.
 
->	- Log in to the MySQL client if you're not there already (you should see "mysql>" as your prompt)
+>	- Log in to the MySQL client if you're not there already (you should see "mysql>" as your prompt) Note: log in as root
 >	- Run the following query:
 	
 	mysql> select @@global.time_zone, @@session.time_zone;
+>	and you should see something like:
 	+--------------------+---------------------+
 	| @@global.time_zone | @@session.time_zone |
 	+--------------------+---------------------+
@@ -67,7 +68,13 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 	1 row in set (0.00 sec)
 
 >	- If you don't see UTC (ie, it's blank or instead you see SYSTEM or some other timezone), run the following:
-
+	mysql> select * from mysql.time_zone_name where name like "%UTC%";
+>	> This may return multiple rows, but you want to verify that 'UTC' is listed there somewhere. If *not*, then we need to build the timezone tables ourselves (see troubleshooting section below)
+>	- If 'UTC' was found, then all we need to do is update our config file: "my.cnf"
+>	- Locate your installation's my.cnf file (you can run **sudo find / -name "my.cnf" ** from another shell if you don't know where it's located) and open it in your favorite text editor.
+>	- Add the following line to the file, save it, then restart your MySQL server.
+	default-time-zone = UTC
+>	- Re-run the "select @@global.time_zone..." stmt from above once you've logged back into MySQL client, verify it's as expected. 
 
 ###### *Version* (this isn't vital at the moment, we will revisit whether everyone should be on same version...see the info at the bottom of this page to see what the versions are as of March 2013)
 To see what version you have installed (if you don't already know), simply run the following command from the shell (not from within the mysql client)
