@@ -44,7 +44,7 @@ installation, the mysql root password is empty.
     mysql -uroot
 
 ### Verify installation is configured the same way as Staging and Production instances in Amazon RDS
-	*NOTE: This section may change later
+	**NOTE: This section may change later
 	The things that need verification or updating are:
 	- TimeZone setting
 	- SQL_Mode setting
@@ -81,10 +81,17 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 >	- Re-run the "select @@global.time_zone..." stmt from above once you've logged back into MySQL client, verify it's as expected. 
 
 ###### *SQL_MODE settings*
-	__NOTE:__ Currently our RDS instances are set to have no flags set for SQL_MODE.  This is likely to change in the future, but for now this step may or may not be needed (depending on your version and installation method)
-	For the sake of mirroring our RDS instances, you may choose to make this change, or if you want leave your installation in a stricter mode, just understand that it may affect how your Rspec tests run.  If anything you should
-	see failures that others miss (if, for instance, there happens to be some validations missing), so for now I'm leaving this open ended.  Either run your development environment w/ no flags, or, if you know what you're doing,
-	you can run with certain flags set.  We will revisit this documentation shortly, but here are the steps to determine what your SQL_MODE settings are and where you can update them.
+	**NOTE: Currently our RDS instances are set to have no flags set for SQL_MODE.  This is 
+	likely to change in the future, but for now this step may or may not be needed (depending 
+	on your version and installation method).
+	For the sake of mirroring our RDS instances, you may choose to make this change, or if 
+	you want leave your installation in a stricter mode, just understand that it may affect how 
+	your Rspec tests run.  If anything, you should see failures that others miss (if, for instance, 
+	there happens to be some validations missing), so for now I'm leaving this open ended.  Either 
+	run your development environment w/ no flags, or, if you know what you're doing, you can run 
+	with certain flags set.  We will revisit this documentation shortly, but here are the steps 
+	to determine what your SQL_MODE settings are and where you can update them.  Toggling between
+	flags and no flags is as simple as changing your my.cnf file and restarting the server instance.
 	
 >	- To check what SQL_MODE flags are set, run the following query in your MySQL client:
 
