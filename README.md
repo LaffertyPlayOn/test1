@@ -135,16 +135,16 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 >
 
 
-### Create the databases
+### Create the databases (logged in as root user)
 
-    create database playon_development;
-    create database playon_test;
+    mysql> create database playon_development;
+    mysql> create database playon_test;
 
 ### Create a user and grant permissions
-
-    create user 'playon_dev'@'localhost';
-    grant all on playon_development.* to 'playon_dev'@'localhost';
-    grant all on playon_test.* to 'playon_dev'@'localhost';
+- While logged into MySQL client as root:
+    mysql> create user 'playon_dev'@'localhost';
+    mysql> grant all on playon_development.* to 'playon_dev'@'localhost';
+    mysql> grant all on playon_test.* to 'playon_dev'@'localhost';
 
 ### Load the seed data
 
