@@ -125,13 +125,13 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 ###### *Version*
 >	This isn't vital at the moment, we will revisit whether everyone should be on same version or not later.  As it stands our Staging and Production
 >	instances on RDS aren't even on the same version, so this step is optional at the moment and more or less a placeholder, should we want to come
->	back to this.  (see the info at the bottom of this page to see what the versions are as of March 2013)
+>	back to this.  (see the info at the bottom of this page to see what the MySQL versions used for Production and Staging are as of March 2013)
 
-To see what version you have installed (if you don't already know), simply run the following command from the shell (not from within the mysql client)
+>	-  To see what version you have installed (if you don't already know), simply run the following command from the shell (not from within the mysql client)
 
-	$ mysql -V
-	or
-	$ mysql --version
+>	$ mysql -V
+>	or
+>	$ mysql --version
 
 
 
