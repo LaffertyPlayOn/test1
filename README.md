@@ -129,9 +129,9 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 
 >	-  To see what version you have installed (if you don't already know), simply run the following command from the shell (not from within the mysql client)
 
->	$ mysql -V
->	or
->	$ mysql --version
+>		$ mysql -V
+>		or
+>		$ mysql --version
 
 
 
