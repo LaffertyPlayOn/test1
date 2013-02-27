@@ -10,11 +10,11 @@ Using homebrew:
 
 It may be a good idea to clean brew and make sure it is up to date.
 
-    brew cleanup
-    brew update
+    $ brew cleanup
+    $ brew update
 
 Install:
-    brew install mysql
+    $ brew install mysql
 
 NOTE: Make sure to read any prompts and instructions.
 
@@ -31,17 +31,17 @@ Using mysql DMG:
 Use the appropriate package for your distribution.
 For example, on Ubuntu:
 
-    sudo apt-get install mysql-server
+    $ sudo apt-get install mysql-server
 
 ### Log In
 If you had to configure the launchctl load, start the server.
 
-    mysql.server start
+    $ mysql.server start
 
 Log into mysql as the root user. Unless you set a password on
 installation, the mysql root password is empty.
 
-    mysql -uroot
+    $ mysql -uroot
 
 ### Verify installation is configured the same way as Staging and Production instances in Amazon RDS
 	**NOTE: This section may change later
@@ -86,7 +86,7 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 	likely to change in the future, but for now this step may or may not be needed (depending 
 	on your version and installation method).
 	For the sake of mirroring our RDS instances, you may choose to make this change, or if 
-	you want leave your installation in a stricter mode, just understand that it may affect how 
+	you want to leave your installation in a stricter mode, just understand that it may affect how 
 	your Rspec tests run.  If anything, you should see failures that others miss (if, for instance, 
 	there happens to be some validations missing), so for now I'm leaving this open ended.  Either 
 	run your development environment w/ no flags, or, if you know what you're doing, you can run 
@@ -122,7 +122,11 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 >
 >	[SQL_MODE FLAGS](http://dev.mysql.com/doc/refman/5.5/en/server-sql-mode.html "FLAGS")
 
-###### *Version* (this isn't vital at the moment, we will revisit whether everyone should be on same version...see the info at the bottom of this page to see what the versions are as of March 2013)
+###### *Version*
+>	This isn't vital at the moment, we will revisit whether everyone should be on same version or not later.  As it stands our Staging and Production
+>	instances on RDS aren't even on the same version, so this step is optional at the moment and more or less a placeholder, should we want to come
+>	back to this.  (see the info at the bottom of this page to see what the versions are as of March 2013)
+
 To see what version you have installed (if you don't already know), simply run the following command from the shell (not from within the mysql client)
 
 	$ mysql -V
@@ -146,4 +150,16 @@ To see what version you have installed (if you don't already know), simply run t
 
 From the shell prompt:
 
-    rake app:seed
+    $ rake app:seed
+    
+
+## Addendum
+
+### Trouble-shooting
+TODO?
+
+### Notes On Current RDS Instances and Settings (what Production and Staging look like)
+
+### General Tips and How-To Section (for those new to MySQL)
+
+### References and further reading (useful resources, etc)
