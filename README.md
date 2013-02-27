@@ -182,7 +182,9 @@ From the shell prompt:
 
 
 ### Notes On Current RDS Instances and Settings (what Production and Staging look like)
+- later
 
 ### General Tips and How-To Section (for those new to MySQL)
-
+- later
 ### References and further reading (useful resources, etc)
+- later
