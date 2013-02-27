@@ -142,6 +142,7 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 
 ### Create a user and grant permissions
 - While logged into MySQL client as root:
+
     mysql> create user 'playon_dev'@'localhost';
     mysql> grant all on playon_development.* to 'playon_dev'@'localhost';
     mysql> grant all on playon_test.* to 'playon_dev'@'localhost';
