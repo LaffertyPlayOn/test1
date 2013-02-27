@@ -156,21 +156,22 @@ From the shell prompt:
 ## Addendum
 
 ### Trouble-shooting
--	*My timezone tables don't have 'UTC' as an option when I try to set my default-time-zone...
+#####*My timezone tables don't have 'UTC' as an option when I try to set my default-time-zone...*
 	- Ok, we need to update MySQL's internal timezone tables...
-		1.	Locate an SQL file that should be included under your MySQL 
-		installation directory (in the "share" folder) called "mysql_test_data_timezone.sql".
-		If you're unsure where to look, try this shell command:
+>		1.	Locate an SQL file that should be included under your MySQL 
+>		installation directory (in the "share" folder) called "mysql_test_data_timezone.sql".
+>		If you're unsure where to look, try this shell command:
 		
 		$ sudo find / -name "mysql_test_data_timezone.sql"
 		
-		Again, it should be in a directory called 'share', so make sure 'share' is in the path you find.
+>		Again, it should be in a directory called 'share', so make sure 'share' is in the path you find.
 		
-		2.	Copy the full path, then log into your MySQL client as root (ie, $ mysql -u root )
-		3.	Run the following query:
+>		2.	Copy the full path, then log into your MySQL client as root (ie, $ mysql -u root )
+>		3.	Run the following query:
 		
 		mysql> source <path/to/file>
-		
+
+>		4. Profit		
 
 ### Notes On Current RDS Instances and Settings (what Production and Staging look like)
 
