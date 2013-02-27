@@ -135,10 +135,10 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 >
 
 
-### Create the databases (logged in as root user)
-
-    mysql> create database playon_development;
-    mysql> create database playon_test;
+### Create the databases
+- While logged into MySQL client as root:
+    	mysql> create database playon_development;
+    	mysql> create database playon_test;
 
 ### Create a user and grant permissions
 - While logged into MySQL client as root:
