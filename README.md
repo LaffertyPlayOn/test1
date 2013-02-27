@@ -162,7 +162,7 @@ From the shell prompt:
 >		installation directory (in the "share" folder) called "mysql_test_data_timezone.sql".
 >		If you're unsure where to look, try this shell command:
 		
-		$ sudo find / -name "mysql_test_data_timezone.sql"
+>			$ sudo find / -name "mysql_test_data_timezone.sql"
 		
 >		Again, it should be in a directory called 'share', so make sure 'share' is in the path you find.
 		
