@@ -86,7 +86,7 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 	see failures that others miss (if, for instance, there happens to be some validations missing), so for now I'm leaving this open ended.  Either run your development environment w/ no flags, or, if you know what you're doing,
 	you can run with certain flags set.  We will revisit this documentation shortly, but here are the steps to determine what your SQL_MODE settings are and where you can update them.
 	
->	1. To check what SQL_MODE flags are set, run the following query in your MySQL client:
+>	- To check what SQL_MODE flags are set, run the following query in your MySQL client:
 
 	mysql> select @@global.sql_mode, @@session.sql_mode;
 	+-------------------+--------------------+
@@ -98,7 +98,7 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 	
 >		- If your results are blank (as seen above) then you have the same set-up as the RDS instances currently (ie, no SQL_MODE flags).  If you have some set (either by default or intentionally), then of course you'll see them listed here.  The default settings can vary based on installation method and/or MySQL version.
 
->	2. To set/change this, the best method is to, again, edit your "my.cnf" file (see steps above from *Timezone settings* section).
+>	- To set/change this, the best method is to, again, edit your "my.cnf" file (see steps above from *Timezone settings* section).
 >
 >	Comment out what (if anything) is in your my.cnf file relating to "sql_mode" and add either an empty string or a comma-separated list of the flags you want...for instance:
 
@@ -109,7 +109,9 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 	sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES 
 
 >	For more information on what the flags are and about the SQL_MODE variable in general, feel free to read more in the MySQL reference manual (these links are for the 5.5 version, you can find the same info regarding your particular version by switching the version number in the URL or clicking on the menu items in the top left).
+>
 >	[SQL_MODE FAQS](http://dev.mysql.com/doc/refman/5.5/en/faqs-sql-modes.html "FAQS")
+>
 >	[SQL_MODE FLAGS](http://dev.mysql.com/doc/refman/5.5/en/server-sql-mode.html "FLAGS")
 
 ###### *Version* (this isn't vital at the moment, we will revisit whether everyone should be on same version...see the info at the bottom of this page to see what the versions are as of March 2013)
