@@ -173,10 +173,11 @@ From the shell prompt:
 >		4.	Run the following query:
 		
 >>			mysql> source <path/to/file>
->		Here's a specific example from my installation. In my case, I'd call:
+>		(Here's a specific example from my installation. In my case, I'd call: )
 >>			mysql> source /usr/local/mysql-5.6.10-osx10.7-x86_64/share/mysql_test_data_timezone.sql
 
->		4. Profit		
+>		5. Return to the Timezone settings section above and verify you can now see 'UTC' somewhere in the "select * from mysql.time_zone......." query you ran there.		
+
 
 ### Notes On Current RDS Instances and Settings (what Production and Staging look like)
 
