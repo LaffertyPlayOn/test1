@@ -72,7 +72,8 @@ but for the time being it's best we mirror the RDS instances as closely as possi
 	
 	mysql> select * from mysql.time_zone_name where name like "%UTC%";
 
->		- This may return multiple rows, but you want to verify that 'UTC' is listed there somewhere.  If *not*, then we need to build the timezone tables ourselves (see troubleshooting section below)
+>		- This may return multiple rows, but you want to verify that 'UTC' is listed there somewhere.  
+>		If *not*, then we need to build the timezone tables ourselves (see troubleshooting section below)
 >	- If 'UTC' was found, then all we need to do is update our config file: "my.cnf"
 >	- Locate your installation's my.cnf file (you can run __sudo find / -name "my.cnf"__ from another shell if you don't know where it's located) and open it in your favorite text editor.
 >	- Add the following line to the file, save it, then restart your MySQL server.
